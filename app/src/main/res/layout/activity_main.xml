@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/login_title"
+        layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_login_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_title"
+        android:layout_marginTop="300px"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="35px"
+            android:layout_marginLeft="60px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="30px"
+                android:layout_height="30px"
+                android:background="@drawable/login_head" />
+
+            <TextView
+                android:id="@+id/tv_login_head"
+                style="@style/black30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="15px"
+                android:gravity="bottom"
+                android:text="@string/user_name" />
+        </LinearLayout>
+
+        <EditText
+            style="@style/gray28"
+            android:id="@+id/et_login_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:layout_marginTop="30px"
+            android:background="@null"
+            android:hint="@string/name_hint" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:background="#ababab" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_login_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_login_name"
+        android:layout_marginTop="80px"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="35px"
+            android:layout_marginLeft="60px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="30px"
+                android:layout_height="30px"
+                android:background="@drawable/password" />
+
+            <TextView
+                android:id="@+id/tv_login_num"
+                style="@style/black30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="15px"
+                android:gravity="bottom"
+                android:text="@string/login_num" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_login_num"
+                style="@style/gray28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="60px"
+                android:layout_marginRight="60px"
+                android:layout_marginTop="30px"
+                android:background="@null"
+                android:hint="@string/num_hint"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/tv_is"
+                android:layout_width="50px"
+                android:layout_height="30px"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="90px"
+                android:background="@drawable/no_look" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:background="#ababab" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180px"
+        android:layout_below="@id/ll_login_num"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_ok"
+        android:layout_width="match_parent"
+        android:layout_height="70px"
+        android:layout_below="@id/ll_login_num"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px"
+        android:layout_marginTop="180px"
+        android:background="#ededed"
+        android:gravity="center"
+        android:text="@string/sure"
+        android:textColor="#000"
+        android:textSize="36px" />
+</RelativeLayout>

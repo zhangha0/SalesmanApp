@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="310px">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30px"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/tv_takeOut_type"
+            style="@style/black36"
+            android:text="主食"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40px" />
+
+        <TextView
+            android:id="@+id/tv_takeOut_manege"
+            style="@style/gray28_79"
+            android:layout_width="70px"
+            android:layout_height="40px"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="28px"
+            android:gravity="center"
+            android:background="@drawable/shape_kuang"
+            android:text="@string/manege" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30px"
+            android:layout_below="@+id/tv_takeOut_type"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10px"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_type1"
+                    android:layout_width="145px"
+                    android:layout_height="145px"
+                    android:background="#e9e7e7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10px"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_type2"
+                    android:layout_width="145px"
+                    android:layout_height="145px"
+                    android:background="#e9e7e7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10px"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_type3"
+                    android:layout_width="145px"
+                    android:layout_height="145px"
+                    android:background="#e9e7e7" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="10px"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_type4"
+                    android:layout_width="145px"
+                    android:layout_height="145px"
+                    android:background="#e9e7e7" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_takeOut_delete"
+        android:layout_width="56px"
+        android:layout_height="56px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/delete_type" />
+
+</RelativeLayout>

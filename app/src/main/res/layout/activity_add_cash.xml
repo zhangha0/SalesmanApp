@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e9e7e7"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Id" />
+
+                <EditText
+                    android:id="@+id/et_cash_id"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Id" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Price" />
+
+                <EditText
+                    android:id="@+id/et_cash_Price"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Price" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Discountprice" />
+
+                <EditText
+                    android:id="@+id/et_cash_Discountprice"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Discountprice" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Title_ES" />
+
+                <EditText
+                    android:id="@+id/et_cash_Title_ES"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Title" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Title_EN" />
+
+                <EditText
+                    android:id="@+id/et_cash_Title_EN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Title" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Title_CN" />
+
+                <EditText
+                    android:id="@+id/et_cash_Title_CN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Title" />
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32px"
+            android:layout_marginRight="32px"
+            android:layout_marginTop="40px"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/black32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cash_Introduce_ES" />
+
+            <EditText
+                android:id="@+id/et_cash_Introduce_ES"
+                style="@style/gray30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:background="@null"
+                android:hint="@string/cash_Introduce" />
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Introduce_EN" />
+
+                <EditText
+                    android:id="@+id/et_cash_Introduce_EN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Introduce" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32px"
+                android:layout_marginRight="32px"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cash_Introduce_CN" />
+
+                <EditText
+                    android:id="@+id/et_cash_Introduce_CN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/cash_Introduce" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

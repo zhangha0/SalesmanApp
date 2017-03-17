@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="36px"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/GroupCode" />
+
+                <EditText
+                    android:id="@+id/et_GroupCode"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/GroupCode" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupPrice" />
+
+                <EditText
+                    android:id="@+id/et_groupPrice"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupPrice" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupDiscountprice" />
+
+                <EditText
+                    android:id="@+id/et_groupDiscountprice"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupDiscountprice" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupTitle_ES" />
+
+                <EditText
+                    android:id="@+id/et_groupTitle_ES"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupTitle_ES" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupTitle_EN" />
+
+                <EditText
+                    android:id="@+id/et_groupTitle_EN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupTitle_EN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupTitle_CN" />
+
+                <EditText
+                    android:id="@+id/et_groupTitle_CN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupTitle_CN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupIntro_ES" />
+
+                <EditText
+                    android:id="@+id/et_groupIntro_ES"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupIntro_ES" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupIntro_EN" />
+
+                <EditText
+                    android:id="@+id/et_groupIntro_EN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupIntro_EN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/groupIntro_CN" />
+
+                <EditText
+                    android:id="@+id/et_groupIntro_CN"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:background="@null"
+                    android:hint="@string/groupIntro_CN" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/firstFood" />
+
+                <TextView
+                    android:id="@+id/tv_firstFood"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/shape_kuang"
+                    android:gravity="center"
+                    android:hint="选择菜品" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/secondFood" />
+
+                <TextView
+                    android:id="@+id/tv_secondFood"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/shape_kuang"
+                    android:gravity="center"
+                    android:hint="选择菜品" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thirdFood" />
+
+                <TextView
+                    android:id="@+id/tv_thirdFood"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/shape_kuang"
+                    android:gravity="center"
+                    android:hint="选择菜品" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sweet" />
+
+                <TextView
+                    android:id="@+id/tv_group_sweet"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/shape_kuang"
+                    android:gravity="center"
+                    android:hint="选择甜品" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drank" />
+
+                <TextView
+                    android:id="@+id/tv_group_drank"
+                    style="@style/gray30"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:layout_marginLeft="10px"
+                    android:background="@drawable/shape_kuang"
+                    android:gravity="center"
+                    android:hint="选择饮料" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:layout_marginBottom="20px"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/black32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/coverPic" />
+
+                <ImageView
+                    android:id="@+id/iv_group"
+                    android:layout_width="135px"
+                    android:layout_height="135px"
+                    android:layout_marginTop="40px"
+                    android:layout_marginBottom="20px"
+                    android:background="@drawable/up_picture"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

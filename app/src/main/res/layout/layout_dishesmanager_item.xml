@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="340px"
+    android:layout_marginLeft="30px"
+    android:layout_marginRight="30px">
+
+    <ImageView
+        android:id="@+id/iv_dishesM"
+        android:layout_width="180px"
+        android:layout_height="180px"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_dishesM_name"
+        style="@style/black36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_dishesM"
+        android:layout_marginLeft="30px"
+        android:layout_toRightOf="@+id/iv_dishesM" />
+
+    <TextView
+        android:id="@+id/tv_dishesM_discountPrice"
+        style="@style/black28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_dishesM"
+        android:layout_marginLeft="30px"
+        android:layout_toRightOf="@+id/iv_dishesM" />
+
+    <TextView
+        android:id="@+id/tv_dishesM_price"
+        style="@style/gray28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_dishesM"
+        android:layout_marginLeft="30px"
+        android:layout_toRightOf="@+id/tv_dishesM_discountPrice" />
+
+    <TextView
+        android:id="@+id/tv_dishesM_delete"
+        style="@style/gray28_79"
+        android:layout_width="100px"
+        android:layout_height="35px"
+        android:layout_alignBottom="@+id/iv_dishesM"
+        android:layout_alignParentRight="true"
+        android:gravity="bottom"
+        android:text="@string/delete" />
+
+    <TextView
+        android:id="@+id/tv_dishesM_revise"
+        style="@style/gray28_79"
+        android:layout_width="100px"
+        android:layout_height="35px"
+        android:layout_alignBottom="@+id/iv_dishesM"
+        android:layout_marginRight="40px"
+        android:layout_toLeftOf="@id/tv_dishesM_delete"
+        android:gravity="bottom"
+        android:text="@string/revise" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#e6e4e4" />
+</RelativeLayout>

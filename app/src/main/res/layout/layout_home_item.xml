@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_home_item"
+    android:layout_margin="20px">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260px">
+        <ImageView
+            android:id="@+id/iv_home_item"
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:src="@mipmap/dog"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="25px"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/tv_home_item1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25px"
+            style="@style/black32"
+            android:text="火锅串串"
+            android:layout_toRightOf="@+id/iv_home_item"
+            android:layout_alignTop="@+id/iv_home_item"/>
+        <TextView
+            android:id="@+id/tv_home_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/black28"
+            android:text="地址： 发乎发的哈就开饭时顶级咖啡"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/iv_home_item"
+            android:layout_marginBottom="30px"/>
+    </RelativeLayout>
+
+</LinearLayout>
