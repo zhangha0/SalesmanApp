@@ -3,11 +3,9 @@ package com.wzj.work.salesmanapp.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,7 +41,6 @@ public class ManageTakeOutActivity extends AutoLayoutActivity implements PullLoa
             if(msg.what==1){
                 mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
                 result=msg.obj.toString();
-                Log.e( "zhang: ",result );
                 if(funNet.isOk(result,ManageTakeOutActivity.this)){
                     try{
                         Gson g=new Gson();

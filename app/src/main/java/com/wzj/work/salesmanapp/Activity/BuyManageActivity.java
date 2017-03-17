@@ -3,11 +3,9 @@ package com.wzj.work.salesmanapp.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,10 +14,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.wzj.work.salesmanapp.Adapter.RecycleBuyAdapter;
-import com.wzj.work.salesmanapp.Adapter.RecyclerDishesAdapter;
 import com.wzj.work.salesmanapp.OtherClass.GroupBuy;
 import com.wzj.work.salesmanapp.OtherClass.MyShopList;
-import com.wzj.work.salesmanapp.OtherClass.Store;
 import com.wzj.work.salesmanapp.OtherClass.StoreBuy;
 import com.wzj.work.salesmanapp.R;
 import com.wzj.work.salesmanapp.Tools.funNet;
@@ -48,7 +44,6 @@ public class BuyManageActivity extends AutoLayoutActivity implements PullLoadMor
             if (msg.what == 1) {
                 mPullLoadMoreRecyclerView.setPullLoadMoreCompleted();
                 result = msg.obj.toString();
-                Log.e("zhang: ", result + "");
                 if (funNet.isOk(result, BuyManageActivity.this)) {
                     Gson g = new Gson();
                     try {
@@ -103,6 +98,7 @@ public class BuyManageActivity extends AutoLayoutActivity implements PullLoadMor
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(BuyManageActivity.this,AddGroupBuyActivity.class);
+                intent.putExtra("option","1");
                 intent.putExtra("shopId",store.Id);
                 startActivity(intent);
             }

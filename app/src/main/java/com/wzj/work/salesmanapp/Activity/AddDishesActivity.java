@@ -4,18 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -53,10 +48,11 @@ public class AddDishesActivity extends AutoLayoutActivity {
     private final static int UPLOAD_MSG = 603;
     private ArrayList<ImageView> foodImageView = new ArrayList<>();
     private ArrayList<MyImage> myFoods = new ArrayList<>();
-    private String picUrl = "";
+    private String picUrl;
     private int foodTypeId = 1;
     private ProgressDialog proDialog;
     private String state;
+    private String originalId = "";
     ArrayList<String> foodId = new ArrayList<>();
     int[] pic1 = {R.mipmap.food1, R.mipmap.food2, R.mipmap.food3, R.mipmap.food4, R.mipmap.food5,
             R.mipmap.food6, R.mipmap.food7, R.mipmap.food8, R.mipmap.food9};
@@ -145,7 +141,6 @@ public class AddDishesActivity extends AutoLayoutActivity {
                 String pic = msg.obj.toString();
                 if (funNet.isOk(pic, AddDishesActivity.this)) {
                     Gson g = new Gson();
-                    Log.e("zhang: ", pic + "");
                     PictureData picData = g.fromJson(pic, PictureData.class);
                     if (!picData.data.equals("")) {
                         picUrl = picData.data;
@@ -180,10 +175,15 @@ public class AddDishesActivity extends AutoLayoutActivity {
         if (state.equals("0")) {
             Bundle bundle = intent.getExtras();
             store = ((MyShopList) bundle.getSerializable("store")).Id;
+            foodImageView.get(0).setVisibility(View.VISIBLE);
+            Glide
+                    .with(AddDishesActivity.this)
+                    .load(R.drawable.up_picture)
+                    .into(foodImageView.get(0));
         } else if (state.equals("1")) {
             Bundle bundle = intent.getExtras();
             food = (Food) bundle.getSerializable("food");
-            store=food.ShopId;
+            store = food.ShopId;
             setView();
         }
     }
@@ -236,11 +236,6 @@ public class AddDishesActivity extends AutoLayoutActivity {
         for (int i = 0; i < foodImageView.size(); i++) {
             foodImageView.get(i).setOnClickListener(new ChooseP());
         }
-        foodImageView.get(0).setVisibility(View.VISIBLE);
-        Glide
-                .with(AddDishesActivity.this)
-                .load(R.drawable.up_picture)
-                .into(foodImageView.get(0));
 
         myFoods.add(food1);
         myFoods.add(food2);
@@ -260,24 +255,24 @@ public class AddDishesActivity extends AutoLayoutActivity {
 
     public void setView() {
         String str = food.IngredientsIconArray;
-        Log.e( "zhang: ","food.IngredientsIconArray="+food.IngredientsIconArray);
         String[] foodArray = null;
         if (!str.equals("null")) {
             foodArray = str.split(",");
             for (int i = 0; i < foodArray.length; i++) {
                 if (!foodArray[i].equals("null") && !foodArray[i].equals("0")) {
-                    try{
+                    try {
                         int t = Integer.parseInt(foodArray[i]);
                         MyImage myImage = myFoods.get(t - 1);
                         foodId.add(t + "");
                         myImage.isChoose = true;
-                        myImage.setBackgroundResource(pic2[myImage.index-1]);
-                    }catch (Exception e){
+                        myImage.setBackgroundResource(pic2[myImage.index - 1]);
+                    } catch (Exception e) {
 
                     }
                 }
             }
         }
+        originalId = food.Id;
         et_num.setText(food.Id);
         et_price.setText(food.Price);
         et_discountPrice.setText(food.Discountprice);
@@ -287,7 +282,18 @@ public class AddDishesActivity extends AutoLayoutActivity {
         et_introES.setText(food.Introduce_ES);
         et_introEN.setText(food.Introduce_EN);
         et_introCN.setText(food.Introduce_CN);
-
+        String imageUrl = food.ImageUrl;
+        if (imageUrl != null) {
+            imageUrl = (imageUrl.split(","))[0];
+            foodImageView.get(0).setVisibility(View.VISIBLE);
+            foodImageView.get(1).setVisibility(View.VISIBLE);
+            x.image().bind(foodImageView.get(0), getResources().getString(R.string.http_tu) + imageUrl);
+            Glide
+                    .with(AddDishesActivity.this)
+                    .load(R.drawable.up_picture)
+                    .into(foodImageView.get(1));
+            picUrl = food.ImageUrl;
+        }
     }
 
     TextView tvlast;
@@ -364,11 +370,12 @@ public class AddDishesActivity extends AutoLayoutActivity {
             if (mResults.size() > 0) {
                 String url = getResources().getString(R.string.http_msg) + "/Common/UploadFoodImage";
                 funNet.uploadfile(url, mResults, handler, UPLOAD_PIC);
-            } else {
+            } else if (picUrl != null) {
                 upLoad();
+            } else {
+                Toast.makeText(AddDishesActivity.this, "请填写完整信息", Toast.LENGTH_SHORT).show();
             }
-
-        } else {
+        }else {
             Toast.makeText(AddDishesActivity.this, "请填写完整信息", Toast.LENGTH_SHORT).show();
         }
     }
@@ -381,8 +388,6 @@ public class AddDishesActivity extends AutoLayoutActivity {
         if (!foodIds.equals("")) {
             foodIds = foodIds.substring(0, foodIds.length() - 1);
         }
-        Log.e("zhang: ","foodIds="+foodIds );
-        Log.e("zhang: ","et_price.getText().toString()="+et_price.getText().toString());
         RequestParams params = new RequestParams(getResources().getString(R.string.http_msg) + "/Food/UpdateFood");
         params.addBodyParameter("ShopId", store);
         params.addBodyParameter("Id", et_num.getText().toString() + "");
@@ -398,6 +403,7 @@ public class AddDishesActivity extends AutoLayoutActivity {
         params.addBodyParameter("FoodTypeId", foodTypeId + "");
         params.addBodyParameter("ImageUrl", picUrl);
         params.addBodyParameter("State", state);
+        params.addBodyParameter("OriginalId", originalId);
         funNet.toolNet(params, handler, UPLOAD_MSG);
     }
 
@@ -431,12 +437,12 @@ public class AddDishesActivity extends AutoLayoutActivity {
             MyImage myImage = (MyImage) v;
             if (myImage.isChoose) {
                 myImage.isChoose = false;
-                myImage.setBackgroundResource(pic1[myImage.index-1]);
+                myImage.setBackgroundResource(pic1[myImage.index - 1]);
                 foodId.remove(myImage.index + "");
             } else {
                 foodId.add(myImage.index + "");
                 myImage.isChoose = true;
-                myImage.setBackgroundResource(pic2[myImage.index-1]);
+                myImage.setBackgroundResource(pic2[myImage.index - 1]);
             }
         }
     }

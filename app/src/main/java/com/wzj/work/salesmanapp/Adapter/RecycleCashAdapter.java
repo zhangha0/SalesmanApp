@@ -1,12 +1,9 @@
 package com.wzj.work.salesmanapp.Adapter;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wzj.work.salesmanapp.OtherClass.CashCoupon;
-import com.wzj.work.salesmanapp.OtherClass.GroupBuy;
 import com.wzj.work.salesmanapp.R;
 import com.wzj.work.salesmanapp.Tools.funNet;
 

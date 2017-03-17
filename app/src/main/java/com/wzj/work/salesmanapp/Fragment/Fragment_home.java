@@ -110,7 +110,7 @@ public class Fragment_home extends Fragment implements PullLoadMoreRecyclerView.
     }
 
     private void getData(int t) {
-        RequestParams params = new RequestParams("http://37.59.66.172:86/Shop/GetShopList");
+        RequestParams params = new RequestParams(context.getResources().getString(R.string.http_msg)+"/Shop/GetShopList");
         params.addQueryStringParameter("EmployeeId", Main2Activity.manData.Id);
         params.addQueryStringParameter("PageIndex", "" + count);
         params.addQueryStringParameter("PageSize", "10");

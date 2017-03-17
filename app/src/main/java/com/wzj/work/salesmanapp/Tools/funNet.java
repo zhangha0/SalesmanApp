@@ -3,7 +3,6 @@ package com.wzj.work.salesmanapp.Tools;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -11,13 +10,10 @@ import com.wzj.work.salesmanapp.OtherClass.IsOk;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
-import org.xutils.http.annotation.HttpResponse;
 import org.xutils.x;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by 44967 on 2017/3/1.
@@ -51,7 +47,6 @@ public class funNet {
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
                 handler.sendEmptyMessage(100);
-                Log.e("zh", "onError: ");
             }
 
             @Override
@@ -80,7 +75,6 @@ public class funNet {
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
                 handler.sendEmptyMessage(100);
-                Log.e("zh", "onError: ");
             }
 
             @Override

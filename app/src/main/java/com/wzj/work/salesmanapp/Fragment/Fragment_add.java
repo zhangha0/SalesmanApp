@@ -71,7 +71,7 @@ public class Fragment_add extends Fragment implements View.OnClickListener{
     }
 
     public void doNet() {
-        RequestParams params = new RequestParams("http://37.59.66.172:86/Shop/GetShopType");
+        RequestParams params = new RequestParams(context.getResources().getString(R.string.http_msg)+"/Shop/GetShopType");
         funNet.toolNet(params, handler, 1);
     }
 

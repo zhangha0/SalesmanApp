@@ -1,13 +1,11 @@
 package com.wzj.work.salesmanapp.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
-import com.wzj.work.salesmanapp.Adapter.RecycleViewHome;
 import com.wzj.work.salesmanapp.Adapter.RecyclerDishesAdapter;
 import com.wzj.work.salesmanapp.OtherClass.Food;
 import com.wzj.work.salesmanapp.OtherClass.MyShopList;

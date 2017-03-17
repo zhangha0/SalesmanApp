@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wzj.work.salesmanapp.Activity.ManageTakeOutActivity;
-import com.wzj.work.salesmanapp.OtherClass.TakeOutData;
 import com.wzj.work.salesmanapp.OtherClass.TakeOutList;
 import com.wzj.work.salesmanapp.R;
 import com.wzj.work.salesmanapp.Tools.funNet;
@@ -43,7 +41,6 @@ public class RecycleTakeOutAdapter extends RecyclerView.Adapter<RecycleTakeOutAd
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
                 String str=msg.obj.toString();
-                Log.e("handleMessage: ",str+"" );
                 if(funNet.isOk(str,context)){
                     Toast.makeText(context,"删除成功",Toast.LENGTH_SHORT).show();
                 }
@@ -95,7 +92,7 @@ public class RecycleTakeOutAdapter extends RecyclerView.Adapter<RecycleTakeOutAd
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(context);  //先得到构造器
-                    builder.setMessage("是否删除该菜品?"); //设置内容
+                    builder.setMessage("是否删除该分类?"); //设置内容
                     builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
                     builder.setPositiveButton("删除", new DialogInterface.OnClickListener() { //设置确定按钮
                         @Override

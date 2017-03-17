@@ -5,8 +5,6 @@ import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +42,6 @@ public class CityListActivity extends AutoLayoutActivity {
             if (msg.what == 1) {
                 pb.setVisibility(View.GONE);
                 String str = msg.obj.toString();
-                Log.e("zhanghao: ", str + "");
                 Gson g = new Gson();
                 CityManage cityManage = g.fromJson(str, CityManage.class);
                 cities = cityManage.data.get(0).city;
@@ -64,7 +61,7 @@ public class CityListActivity extends AutoLayoutActivity {
     }
 
     public void doNet() {
-        RequestParams params = new RequestParams("http://37.59.66.172:86/Shop/GetProvinceOrCity");
+        RequestParams params = new RequestParams(getResources().getString(R.string.http_msg)+"/Shop/GetProvinceOrCity");
         funNet.toolNet(params, handler, 1);
     }
     public void setElAdapter(){

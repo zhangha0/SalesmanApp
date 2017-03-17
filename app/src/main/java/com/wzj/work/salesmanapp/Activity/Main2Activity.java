@@ -14,12 +14,12 @@ import com.wzj.work.salesmanapp.R;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 public class Main2Activity extends AutoLayoutActivity implements FragmentDown.Callbacks{
-    Fragment_home fUp1;
-    Fragment_add fUp2;
-    Fragment_apply fUp3;
-    Fragment_mine fUp4;
-    FragmentManager fm;
-    FragmentTransaction ft;
+    private Fragment_home fUp1;
+    private Fragment_add fUp2;
+    private Fragment_apply fUp3;
+    private Fragment_mine fUp4;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
     public static ManData manData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

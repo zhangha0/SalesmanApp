@@ -5,7 +5,6 @@ import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wzj.work.salesmanapp.OtherClass.Dishes;
-import com.wzj.work.salesmanapp.OtherClass.MtoFood;
 import com.wzj.work.salesmanapp.R;
 
 import org.xutils.x;
@@ -91,7 +89,6 @@ public class RecycleAddMtoAdapter extends RecyclerView.Adapter<RecycleAddMtoAdap
         String[] foodArray = null;
         if (!str.equals("null")) {
             foodArray = str.split(",");
-            Log.e("zhang: ", str);
             holder.ll_array.removeAllViews();
             for (int i = 0; i < foodArray.length; i++) {
                 if (!foodArray[i].equals("null")) {

@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -134,10 +133,6 @@ public class MainActivity extends AutoLayoutActivity {
 
     public void login() {
         RequestParams params = new RequestParams(getResources().getString(R.string.http_msg)+"/Saleman/Login");
-//        params.addQueryStringParameter("Name", "小浣熊业务员");
-//        params.addQueryStringParameter("PassWord", MD5.GetMD5Code("123456"));
-        Log.e( "login: ",MD5.GetMD5Code(et_loginNum.getText().toString()));
-        Log.e( "login: ",et_logiName.getText().toString());
         params.addQueryStringParameter("Name", et_logiName.getText().toString());
         params.addQueryStringParameter("PassWord", MD5.GetMD5Code(et_loginNum.getText().toString()));
         funNet.toolNet(params, handler, 1);

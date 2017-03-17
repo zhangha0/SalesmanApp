@@ -1,6 +1,5 @@
 package com.wzj.work.salesmanapp.Adapter;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +74,6 @@ public class RecyclerDishesAdapter extends RecyclerView.Adapter<RecyclerDishesAd
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
                 String result=msg.obj.toString();
-                Log.e("zhang: ","result="+result );
                 if(funNet.isOk(result,context)){
                     Toast.makeText(context,"删除成功",Toast.LENGTH_SHORT).show();
                 }else {
@@ -119,14 +116,12 @@ public class RecyclerDishesAdapter extends RecyclerView.Adapter<RecyclerDishesAd
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);  //先得到构造器
                 builder.setMessage("是否删除该菜品?"); //设置内容
-                builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
                 builder.setPositiveButton("删除", new DialogInterface.OnClickListener() { //设置确定按钮
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        RequestParams params = new RequestParams(context.getResources().getString(R.string.http_msg) + "/Food/DelTakeWay");
+                        RequestParams params = new RequestParams(context.getResources().getString(R.string.http_msg) + "/Food/DeleteFood");
                         params.addQueryStringParameter("ShopId", foodList.get(position).ShopId);
                         params.addQueryStringParameter("FoodId", foodList.get(position).Id);
-                        Log.e( "zhang: ","ShopId="+ foodList.get(position).ShopId+"  FoodId"+foodList.get(position).Id);
                         funNet.toolNet(params, handler, 1);
                         foodList.remove(position);
                         notifyItemRemoved(position);

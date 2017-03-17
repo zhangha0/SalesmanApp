@@ -3,9 +3,7 @@ package com.wzj.work.salesmanapp.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +46,6 @@ public class CityListActivity2 extends AutoLayoutActivity {
             if (msg.what == 1) {
                 pb.setVisibility(View.GONE);
                 String str = msg.obj.toString();
-                Log.e("zhanghao: ", str + "");
                 Gson g = new Gson();
                 CityManage cityManage = g.fromJson(str, CityManage.class);
                 provinces=cityManage.data;
@@ -70,7 +67,7 @@ public class CityListActivity2 extends AutoLayoutActivity {
         doNet();
     }
     public void doNet() {
-        RequestParams params = new RequestParams("http://37.59.66.172:86/Shop/GetProvinceOrCity");
+        RequestParams params = new RequestParams(getResources().getString(R.string.http_msg)+"/Shop/GetProvinceOrCity");
         funNet.toolNet(params, handler, 1);
     }
     public void initBa(){

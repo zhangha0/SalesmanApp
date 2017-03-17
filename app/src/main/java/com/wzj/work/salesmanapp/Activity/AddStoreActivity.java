@@ -7,38 +7,25 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ExpandableListView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.wzj.work.salesmanapp.Adapter.CityListAdapter;
-import com.wzj.work.salesmanapp.OtherClass.Area;
-import com.wzj.work.salesmanapp.OtherClass.City;
-import com.wzj.work.salesmanapp.OtherClass.CityManage;
 import com.wzj.work.salesmanapp.OtherClass.PictureData;
-import com.wzj.work.salesmanapp.OtherClass.PictureShopData;
 import com.wzj.work.salesmanapp.OtherClass.UpShopBack;
 import com.wzj.work.salesmanapp.R;
-import com.wzj.work.salesmanapp.Tools.LocationManage;
-import com.wzj.work.salesmanapp.Tools.MD5;
 import com.wzj.work.salesmanapp.Tools.funNet;
 import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
@@ -171,7 +158,6 @@ public class AddStoreActivity extends AutoLayoutActivity implements EasyPermissi
                 }
             } else if (msg.what == UP_LOGO) {
                 String pic = msg.obj.toString();
-                Log.e("handleMessage: ", pic);
                 Gson g = new Gson();
                 PictureData pictureData = g.fromJson(pic, PictureData.class);
                 if (!pictureData.data.equals("")) {
@@ -187,7 +173,6 @@ public class AddStoreActivity extends AutoLayoutActivity implements EasyPermissi
                 }
             } else if (msg.what == UP_PIC) {
                 String pic = msg.obj.toString();
-                Log.e("handleMessage: ", pic);
                 Gson g = new Gson();
                 PictureData pictureData = g.fromJson(pic, PictureData.class);
                 pictureList = pictureData.data;
@@ -196,7 +181,6 @@ public class AddStoreActivity extends AutoLayoutActivity implements EasyPermissi
                 doUpload_map();
             } else if (msg.what == UP_OK) {
                 String str = msg.obj.toString();
-                Log.e("handleMessage: ", str);
                 Gson g = new Gson();
                 UpShopBack back = g.fromJson(str, UpShopBack.class);
                 if (back.statusCode.equals("1")) {
@@ -317,7 +301,6 @@ public class AddStoreActivity extends AutoLayoutActivity implements EasyPermissi
                     cityId = data.getStringExtra("cityId");
                     areaId = data.getStringExtra("areaId");
                     tv_Address.setText(data.getStringExtra("area"));
-                    Log.e("zzz: ", provinceId + "--" + cityId + "--" + areaId);
                 }
             }
             super.onActivityResult(requestCode, resultCode, data);

@@ -7,11 +7,9 @@ import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +22,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.wzj.work.salesmanapp.Adapter.RecycleAddMtoAdapter;
-import com.wzj.work.salesmanapp.Adapter.RecycleMTOAdapter;
 import com.wzj.work.salesmanapp.MyView.MyTextView;
 import com.wzj.work.salesmanapp.OtherClass.Dishes;
-import com.wzj.work.salesmanapp.OtherClass.MtoFood;
 import com.wzj.work.salesmanapp.OtherClass.ShopDishes;
 import com.wzj.work.salesmanapp.R;
 import com.wzj.work.salesmanapp.Tools.funNet;
@@ -116,7 +112,6 @@ public class AddMtoFoodActivity extends AutoLayoutActivity {
                         foodArray+=foodList.get(i)+",";
                     }
                     foodArray=foodArray.substring(0,foodArray.length()-1);
-                    Log.e("zhang: ", foodArray);
                 }
                 progressDialog("添加中...");
                 RequestParams params = new RequestParams(getResources().getString(R.string.http_msg) + "/Food/AddTakeaway");
@@ -221,7 +216,6 @@ public class AddMtoFoodActivity extends AutoLayoutActivity {
                 String[] foodArray = null;
                 if (!str.equals("null")) {
                     foodArray = str.split(",");
-                    Log.e("zhang: ", str);
                     vh.ll_array.removeAllViews();
                     for (int i = 0; i < foodArray.length; i++) {
                         if (!foodArray[i].equals("null")&&!foodArray[i].equals("0")) {
